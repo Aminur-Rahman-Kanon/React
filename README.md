@@ -1,70 +1,38 @@
-# Getting Started with Create React App
+# React Error Boundary
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+Errors are bound to happen in our applications. When an error raise, the whole applicaion breaks, meaning React will unmount all components till we reload the app. It would be quite nice if we could handle those errors so our app doesn't break and we can continue using it. React 16 introduced a new concept "Error Boundary" where we create a class component then we use either static getDerivedStateFromError or componentDidCatch lifecycle method or both, then we pass the component that might occur error as children. As a result if an error raise in the child component then the class component will catch the error and then we can render a fallback UI or log it to a error logging service.
 
-## Available Scripts
+In that way, we can catch error in the constractor, life cycle method and rendering but not for:
 
-In the project directory, you can run:
+1. Event Handlers.
+2. Asynchronous code.
+3. Server side rendering.
+4. Error thrown in the Error boundary component itself.
 
-### `npm start`
+We can use try catch block to catch errors in the above scenerios. But React provides a package called "react-error-boundary" where we can catch errors in the runtime as well as in the case for event-handlers and asynchronous operation.
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+In this project, I have demonstrates how we can use "react-error-boundary" to catch errors in our app.
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+The ErrorBoundary component is the main component available in react-error-boundary. It allows us to implement the typical React error boundary with less code.
 
-### `npm test`
+ErrorBoundary component has a couple of props that we can use. Such as:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+1. children
+2. fallbackComponent
+3. fallbackRender
+4. fallback
+5. onError
+6. onReset
+7. resetKeys
+8. onResetKeyChange
 
-### `npm run build`
+However, I have used the fallbackComponent only since this project is very simple where I have created component called Test where I have wrapped it with the ErrorBoundary component from "react-error-boundary" in the App component. In the Test component, the user left with a button where it invoke a throw new Error(), since the button trigger an event, generally the error will not catch by the error boundary. To catch the error triggered by the event we have to import and call the onErrorHandler hook from the 'react-error-boundary in the Test component.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+I also created a fallback component which i passed in the fallbackComponent props in the ErrorBoundary component. This fallbaack component will receive error, componentStack and resetErrorBoundary props. From which we can display the error in the display and pass the resetErrorBoundary in a button which will reset the ErrorBoundary component to the initial state.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Please note that I haven't used onReset or resetKeys because i dont have a state variable in this app. So just by calling the resetErrorBoundary function will reset the ErrorBoundary component.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Here is a link for complete documentation of 	["react-error-boundary"](https://github.com/bvaughn/react-error-boundary/blob/master/README.md)
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+Hope that will help you a bit.
+Happy Coding...
