@@ -1,0 +1,28 @@
+.main {
+    width: 100%;
+    padding: 10px;
+    box-sizing: border-box;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.headingContainer, .btnContainer {
+    width: 100%;
+    margin: 50px auto;
+}
+
+.generateBtn {
+    height: 35px;
+    width: 150px;
+    border: 1px solid grey;
+    border-radius: 10px;
+    cursor: pointer;
+    color: #464545;
+}
+
+.generateBtn:hover {
+    border: 1px solid rgb(224, 118, 24);
+    color:rgb(224, 118, 24);
+}
