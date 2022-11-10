@@ -1,0 +1,35 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Rajdhani&family=Roboto+Condensed&display=swap');
+
+.App {
+  font-family: 'PT Serif', serif;
+  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.btnContainer {
+  width: 100%;
+  margin: 15px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.btn {
+  height: 40px;
+  width: 150px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background-color: rgb(243, 239, 239);
+  color: grey;
+  cursor: pointer;
+}
+
+.btn:hover {
+  background-color: white;
+  color: black;
+}
