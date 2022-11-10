@@ -1,0 +1,88 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Rajdhani&family=Roboto+Condensed&display=swap');
+
+.App {
+  font-family: 'PT Serif', serif;
+  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+  width: 100%;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.informationDisplayContainer {
+  width: 90%;
+  margin: 25px auto;
+  padding: 10px;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.inputContainer {
+  width: 90%;
+  margin: 25px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.inputName {
+  width: 350px;
+  height: 35px;
+  padding-left: 10px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  outline: none;
+}
+
+.nameDisplayContainer {
+  width: 90%;
+  margin: 25px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.displayNameContainer {
+  width: 300px;
+  padding: 15px;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column;
+  justify-content: center;
+  align-items: center;
+  color: white;
+}
+
+.nameDisplayBtn {
+  height: 35px;
+  width: 150px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background-color: rgb(231, 229, 229);
+  color: grey;
+  cursor: pointer;
+}
+
+.nameDisplayBtn:hover {
+  background-color: white;
+  color: black;
+}
+
+.modalCloseBtn {
+  height: 30px;
+  width: 100px;
+  margin: 10px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  background-color: lightgray;
+  color: grey;
+  cursor: pointer;
+}
+
+.modalCloseBtn:hover {
+  background-color: white;
+  color: black;
+}
