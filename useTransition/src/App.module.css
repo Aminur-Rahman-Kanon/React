@@ -1,0 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=PT+Serif&family=Rajdhani&family=Roboto+Condensed&display=swap');
+
+.App {
+  font-family: 'PT Serif', serif;
+  font-family: 'Rajdhani', sans-serif;
+  font-family: 'Roboto Condensed', sans-serif;
+  width: 100%;
+  margin: 30px auto;
+  box-sizing: border-box;
+  display: flex;
+  flex-flow: column;
+  align-items: center;
+}

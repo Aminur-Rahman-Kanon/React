@@ -1,0 +1,57 @@
+.userContainerMain {
+    width: 100%;
+    margin: 25px auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.userDisplayContainer {
+    width: 90%;
+    margin: 10px auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.userDisplayGroup {
+    width: 100%;
+    margin: 10px auto;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.userChangeInput {
+    height: 35px;
+    width: 350px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    padding-left: 10px;
+}
+
+.changeBtnContainer {
+    width: 100%;
+    margin: 15px auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.changeBtn {
+    height: 35px;
+    width: 150px;
+    border: 1px solid lightgray;
+    border-radius: 10px;
+    background-color: rgb(233, 233, 233);
+    color: grey;
+    cursor: pointer;
+}
+
+.changeBtn:hover {
+    background-color: white;
+    color: black;
+}

@@ -1,0 +1,14 @@
+# useTransition hook
+
+useTransition hook is the new hooks introduced in react 18. It enable us to mark a state update as low priority, any other state update will then have higher priority. When we have any expensive state update which might affect the UI or make the app a bit slugish, we can use useTransition to mark that state update as lower priority, so React will update any other state update as usual and then will update that state. That comes really handy particularly when we want to filter items from a really large list by the user input.
+
+However, even if this hook makes the app responsive in the event of expensive operation, it is advisable to use this hook whenever it is absolutely necessary. Because normally, React collect all the state update call and invoke them together resulting a single render. Suppose I have a button and that button fires a function that update 3 individual state. So clicking that button,  React will collect all the 3 state update call and invoke them one by one and then will re-render but for useTransition, React separate the state update which is passed in the useTransition from other state update which cause ren-render more than one. So using useTransition most of the cases will make the app less performant.
+
+useTransition returns an array of 2 items. One is called isPending which is a boolean value, and another is startTransition function. We need to decalre the state update in the startTransition function to mark it as low priority. So when React perform state update, startTransition remain pending and the isPending value remain true, and when all update finish then React will then call the startTransition causing another state update and when finsh isPending become false and cause another re-render.
+
+In this app I have a state variable "value" which is an array and also an input field. When user enter a value in the input field it trigger a function. This function has an array which i used to push the user input 10000 times, then it update the state "value" with that array. Then finally I loop through that "value" array and display the item in the browser. That make the app quite slow even by the time user input values it become irresponsive.
+
+So i passed the "setValue" in the startTransition which mark this state update low proirity and I used the isPending variable to conditionally display a "Loading..." text in the browser while the update is still pending. So now when I enter values in the input field its responsive and when I stop React update the state and display the result in the browser.
+
+Hope this helps a bit.
+Happy coding ...
