@@ -49,7 +49,7 @@ To understand how useState works behind the cover, I am leaving a code example b
 
 `
 
-const React = (() => {
+  const React = (() => {
 
     let hooks = [];
     let idx = 0;
@@ -71,9 +71,9 @@ const React = (() => {
     }
 
     return {useState, render};
-})()
+  })()
 
-const App = () => {
+  const App = () => {
 
     const [num, setNum] = React.useState(1);
     const [text, setText] = React.useState('Hello');
@@ -83,13 +83,14 @@ const App = () => {
         increment: () => setNum(num + 1),
         type: (word) => setText(word)
     }
-}
+  }
 
-var app = React.render(App);
-app.increment();
-var app = React.render(App)
-app.type('World');
-var app = React.render(App)`
+  var app = React.render(App);
+  app.increment();
+  var app = React.render(App)
+  app.type('World');
+  var app = React.render(App)
+`
 
 Hope that helps a bit.
 Happy coding ...
