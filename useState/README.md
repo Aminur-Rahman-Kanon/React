@@ -68,7 +68,7 @@ const React = (() => {
         return C;
     }
 
-    return {useState, render};
+    return {useState, render}
 })()
 
 const App = () => {
