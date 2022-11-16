@@ -70,7 +70,9 @@ const React = (() => {
 
     return {useState, render};
 })()
+`
 
+`
 const App = () => {
     const [num, setNum] = React.useState(1);
     const [text, setText] = React.useState('Hello');
