@@ -71,8 +71,8 @@ To understand how useState works behind the cover, I am leaving a code example b
 })()
 
 const App = () => {
-    const [num, setNum] = React.useState(1);
-    const [text, setText] = React.useState('Hello');
+    const [num, setNum] = React.useState(1); // 1
+    const [text, setText] = React.useState('Hello') //2
     console.log({num, text});
     return {
         increment: () => setNum(num + 1),
@@ -85,6 +85,7 @@ app.increment();
 var app = React.render(App)
 app.type('World');
 var app = React.render(App)`
+
 
 Hope that helps a bit.
 Happy coding ...
