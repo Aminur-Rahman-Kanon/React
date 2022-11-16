@@ -68,12 +68,12 @@ const React = (() => {
         return C;
     }
 
-    return {useState, render}
+    return {useState, render};
 })()
 
 const App = () => {
-    const [num, setNum] = React.useState(1); // 1
-    const [text, setText] = React.useState('Hello') //2
+    const [num, setNum] = React.useState(1);
+    const [text, setText] = React.useState('Hello');
     console.log({num, text});
     return {
         increment: () => setNum(num + 1),
