@@ -47,10 +47,10 @@ So when clicked on the increment button it increment the count value with 1 and 
 
 To understand how useState works behind the cover, I am leaving a code example below:
 
-`
-const React = (() => {
+`const React = (() => {
     let hooks = [];
     let idx = 0;
+        
     const useState = initVal => {
         let state = hooks[idx] || initVal;
         let _idx = idx
@@ -69,6 +69,7 @@ const React = (() => {
 
     return {useState, render};
 })()
+
 const App = () => {
     const [num, setNum] = React.useState(1);
     const [text, setText] = React.useState('Hello');
