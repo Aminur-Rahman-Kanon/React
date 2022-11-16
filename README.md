@@ -49,7 +49,7 @@ To understand how useState works behind the cover, I am leaving a code example b
 
 `
 
-  const React = (() => {
+ const React = (() => {
 
     let hooks = [];
     let idx = 0;
@@ -71,7 +71,8 @@ To understand how useState works behind the cover, I am leaving a code example b
     }
 
     return {useState, render};
-  })()
+    
+ })()
 
   const App = () => {
 
