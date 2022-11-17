@@ -50,7 +50,7 @@ To understand how useState works behind the cover, I am leaving a code example b
 `
     const React = (() => {
         let hooks = [];
-        let idx = 0;
+        let idx = 0
             
         const useState = initVal => {
             let state = hooks[idx] || initVal;
