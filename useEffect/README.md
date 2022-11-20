@@ -22,9 +22,13 @@ Another useCase is to run a side effect on whenever a specific element is change
 
 
 `
+
 useEffect(() => {
+
     document.title = 'useEffect is awesome'
+    
 }, [ state variable ])
+
 `
 
 Not just side effect, we can perform any other operation we want which is going to run after the dom being rendered.
