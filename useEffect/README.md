@@ -21,9 +21,11 @@ We can use the useEffect hook to prevent the above problem by calling the useEff
 Another useCase is to run a side effect on whenever a specific element is changed. Lets consider when a certain state changed we want to change the title meta tag to something. For that we need to pass the state variable in the dependency array of the useEffect which is the second parameter. Something like this:
 
 
-`useEffect(() => {
+`
+useEffect(() => {
     document.title = 'useEffect is awesome'
-}, [ state variable ])`
+}, [ state variable ])
+`
 
 Not just side effect, we can perform any other operation we want which is going to run after the dom being rendered.
 
