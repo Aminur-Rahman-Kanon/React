@@ -23,11 +23,11 @@ Another useCase is to run a side effect on whenever a specific element is change
 
 `
 
-useEffect(() => {
+    useEffect(() => {
 
-    document.title = 'useEffect is awesome'
+        document.title = 'useEffect is awesome'
     
-}, [ state variable ])
+    }, [ state variable ])
 
 `
 
