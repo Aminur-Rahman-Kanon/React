@@ -1,0 +1,36 @@
+.App {
+  text-align: center;
+}
+
+.card {
+  width: 250px;
+  height: 200px;
+  margin: 10px;
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid lightgrey;
+  border-radius: 10px;
+}
+
+.cardsContainer {
+  margin: 35px auto;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-wrap: wrap;
+}
+
+.btn {
+  height: 35px;
+  width: 100px;
+  margin: 10px;
+  border: 1px solid lightgray;
+  border-radius: 10px;
+  cursor: pointer;
+  color: grey;
+}
+
+.btn:hover {
+  background-color: white;
+  color: #000;
+}
