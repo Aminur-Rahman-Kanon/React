@@ -1,0 +1,10 @@
+.countContainer {
+    height: 100px;
+    width: 100%;
+    display: flex;
+    flex-flow: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    color: 'black'
+}
